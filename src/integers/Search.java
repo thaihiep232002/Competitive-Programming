@@ -14,7 +14,6 @@ public class Search {
             return utilBinary(array, mid + 1, right, target);
         }
     }
-    // returns the index of the target value if exists.
     static int binary(int[] array, int target) {
         int left = 0;
         int right = array.length - 1;
