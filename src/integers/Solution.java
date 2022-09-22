@@ -71,5 +71,19 @@ public class Solution {
         }
         return false;
     }
+
+    static int Pow(int x, int i) {
+        if (i == 1) {
+            return x;
+        } else {
+            if (i % 2 == 0) {
+                int t = Pow(x, i / 2);
+                return t * t;
+            } else {
+                return x * Pow(x, i - 1);
+            }
+        }
+    }
+
     
 }
