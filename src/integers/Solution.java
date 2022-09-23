@@ -59,14 +59,12 @@ public class Solution {
     }
 
     static boolean isPalindrome(int x) {
+        // i have not done
         int match = 0;
         while (x != 0) {
             int lastDigit = x % 10;
             match = 10 * match + lastDigit;
-            System.out.println(match);
-            System.out.println(x);
             if (match == x) return true;
-
             x = x / 10;
         }
         return false;
