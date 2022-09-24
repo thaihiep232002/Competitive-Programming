@@ -1,5 +1,4 @@
 package integers;
-
 import java.util.*;
 
 public class Solution {
@@ -59,29 +58,27 @@ public class Solution {
     }
 
     static boolean isPalindrome(int x) {
-        // i have not done
+        // 123321
+        // i have done
         int match = 0;
-        while (x != 0) {
+        while (match < x) {
             int lastDigit = x % 10;
             match = 10 * match + lastDigit;
-            if (match == x) return true;
             x = x / 10;
         }
-        return false;
+        return match == x || (match / 10) == x;
     }
 
-    static int Pow(int x, int i) {
-        if (i == 1) {
+    static int Pow(int x, int n) {
+        if (n == 1) {
             return x;
         } else {
-            if (i % 2 == 0) {
-                int t = Pow(x, i / 2);
+            if (n % 2 == 0) {
+                int t = Pow(x, n / 2);
                 return t * t;
             } else {
-                return x * Pow(x, i - 1);
+                return x * Pow(x, n - 1);
             }
         }
     }
-
-    
 }
