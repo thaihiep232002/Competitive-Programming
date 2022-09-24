@@ -1,5 +1,10 @@
 package Strings;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Solution {
     public static void ReverseString(char[] s) {
         int left = 0;
@@ -46,5 +51,32 @@ public class Solution {
             if (prefix == "") return "";
         }
         return prefix;
+    }
+
+    public static List<String> findRepeatedDnaSequences(String s) {
+        final int longOfDnaSequences = 10;
+        List<String> result = new ArrayList<>();
+        Set<String> mySet = new HashSet<>();
+
+        for (int i = 0; i < s.length() - longOfDnaSequences + 1; i++) {
+            String Dna = s.substring(i, longOfDnaSequences + i);
+
+            if(mySet.contains(Dna)) {
+                boolean isExisted = false;
+                for (String str : result) {
+                    if (str.equals(Dna)) {
+                        isExisted = true;
+                        break;
+                    }
+                }
+                if (isExisted == false) {
+                    result.add(Dna);
+                }
+            } else {
+                mySet.add(Dna);
+            }
+        }
+
+        return result;
     }
 }
